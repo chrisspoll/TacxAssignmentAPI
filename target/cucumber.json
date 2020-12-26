@@ -1,0 +1,208 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-12-22T20:01:35.395Z",
+        "line": 16,
+        "name": "Verify created employee data",
+        "description": "",
+        "id": "post-create-a-new-employee;verify-created-employee-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4450719700,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User sends POST request to \"/create\" endpoint with \"newName\" 11000 44",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/create\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"newName\"",
+                  "offset": 51
+                },
+                {
+                  "val": "11000",
+                  "offset": 61
+                },
+                {
+                  "val": "44",
+                  "offset": 67
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userSendsPOSTRequestToEndpointWithSalaryAge(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: Verify Status Code 200 expected:\u003c201\u003e but was:\u003c200\u003e\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:835)\r\n\tat org.junit.Assert.assertEquals(Assert.java:647)\r\n\tat com.tacx.stepDefs.GETAllEmployeeData.user_gets_status_code(GETAllEmployeeData.java:23)\r\n\tat ✽.User gets status code 201(file:///C:/Users/BiLAL/IdeaProjects/TacxAssignmentAPI/src/test/resources/POST_CreateANewEmployee.feature:5)\r\n",
+              "duration": 15626400,
+              "status": "failed"
+            },
+            "line": 5,
+            "name": "User gets status code 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 22
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_status_code(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 6,
+            "name": "User gets Content-Type \"application/json\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"application/json\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_content_type(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "User gets \"Created\" next to status code",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Created\"",
+                  "offset": 10
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_next_to_status_code(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "User gets \"success\" value of status",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"success\"",
+                  "offset": 10
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsValueOfStatus(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "User gets the given \"newName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"newName\"",
+                  "offset": 20
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheGiven(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "User gets the given 11000",
+            "match": {
+              "arguments": [
+                {
+                  "val": "11000",
+                  "offset": 20
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheGivenSalary(java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "User gets the given 44",
+            "match": {
+              "arguments": [
+                {
+                  "val": "44",
+                  "offset": 20
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheGivenSalary(java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "User gets \"added\" value of message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"added\"",
+                  "offset": 10
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsValueOfMessage(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "User saves the new employee id",
+            "match": {
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userSavesTheNewEmployeeId()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@wip"
+          }
+        ]
+      }
+    ],
+    "name": "POST Create a new employee",
+    "description": "",
+    "id": "post-create-a-new-employee",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/POST_CreateANewEmployee.feature",
+    "tags": []
+  }
+]

@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         glue = "com/tacx/stepDefs",
         dryRun = false,
         strict = true,
-        tags = "@wip",
+        tags = "@smoke",
         publish = true
 
 

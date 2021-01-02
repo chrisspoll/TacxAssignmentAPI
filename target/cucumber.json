@@ -1,58 +1,44 @@
 [
   {
-    "line": 1,
+    "line": 2,
     "elements": [
       {
-        "start_timestamp": "2020-12-22T20:01:35.395Z",
-        "line": 16,
-        "name": "Verify created employee data",
+        "start_timestamp": "2021-01-02T18:54:05.548Z",
+        "line": 17,
+        "name": "Verify first employee data",
         "description": "",
-        "id": "post-create-a-new-employee;verify-created-employee-data;;2",
+        "id": "tacx-collection;verify-first-employee-data;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 4450719700,
+              "duration": 3478630200,
               "status": "passed"
             },
-            "line": 4,
-            "name": "User sends POST request to \"/create\" endpoint with \"newName\" 11000 44",
+            "line": 5,
+            "name": "User sends GET request to \"/employees\" endpoint",
             "match": {
               "arguments": [
                 {
-                  "val": "\"/create\"",
-                  "offset": 27
-                },
-                {
-                  "val": "\"newName\"",
-                  "offset": 51
-                },
-                {
-                  "val": "11000",
-                  "offset": 61
-                },
-                {
-                  "val": "44",
-                  "offset": 67
+                  "val": "\"/employees\"",
+                  "offset": 26
                 }
               ],
-              "location": "com.tacx.stepDefs.GETAllEmployeeData.userSendsPOSTRequestToEndpointWithSalaryAge(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)"
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_sends_get_request_to_endpoint(java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError: Verify Status Code 200 expected:\u003c201\u003e but was:\u003c200\u003e\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:835)\r\n\tat org.junit.Assert.assertEquals(Assert.java:647)\r\n\tat com.tacx.stepDefs.GETAllEmployeeData.user_gets_status_code(GETAllEmployeeData.java:23)\r\n\tat ✽.User gets status code 201(file:///C:/Users/BiLAL/IdeaProjects/TacxAssignmentAPI/src/test/resources/POST_CreateANewEmployee.feature:5)\r\n",
-              "duration": 15626400,
-              "status": "failed"
+              "status": "passed"
             },
-            "line": 5,
-            "name": "User gets status code 201",
+            "line": 6,
+            "name": "User gets status code 200",
             "match": {
               "arguments": [
                 {
-                  "val": "201",
+                  "val": "200",
                   "offset": 22
                 }
               ],
@@ -62,31 +48,14 @@
           },
           {
             "result": {
-              "status": "skipped"
-            },
-            "line": 6,
-            "name": "User gets Content-Type \"application/json\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"application/json\"",
-                  "offset": 23
-                }
-              ],
-              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_content_type(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
+              "status": "passed"
             },
             "line": 7,
-            "name": "User gets \"Created\" next to status code",
+            "name": "User gets \"OK\" next to status code",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Created\"",
+                  "val": "\"OK\"",
                   "offset": 10
                 }
               ],
@@ -96,9 +65,27 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "status": "passed"
             },
             "line": 8,
+            "name": "User gets Content-Type \"application/json;charset\u003dutf-8\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"application/json;charset\u003dutf-8\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_content_type(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1304618200,
+              "status": "passed"
+            },
+            "line": 9,
             "name": "User gets \"success\" value of status",
             "match": {
               "arguments": [
@@ -113,9 +100,345 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 124999300,
+              "status": "passed"
             },
-            "line": 9,
+            "line": 10,
+            "name": "User gets 1. employee id as 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 10
+                },
+                {
+                  "val": "1",
+                  "offset": 28
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_employee_id_as(java.lang.Integer,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 62492400,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User gets 1. employee name as \"Tiger Nixon\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 10
+                },
+                {
+                  "val": "\"Tiger Nixon\"",
+                  "offset": 30
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_employee_name_as(java.lang.Integer,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 31250700,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User gets 1. employee salary as 320800",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 10
+                },
+                {
+                  "val": "320800",
+                  "offset": 32
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_employee_salary_as(java.lang.Integer,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 46874200,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User gets 1. employee age as 61",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 10
+                },
+                {
+                  "val": "61",
+                  "offset": 29
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_employee_age_as(java.lang.Integer,java.lang.Integer)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-02T18:54:10.753Z",
+        "line": 30,
+        "name": "Verify employee\u0027s data",
+        "description": "",
+        "id": "tacx-collection;verify-employee-s-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 953096500,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User sends GET request to \"/employee/1\" endpoint",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/employee/1\"",
+                  "offset": 26
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_sends_get_request_to_endpoint(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User gets status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 22
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_status_code(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User gets Content-Type \"application/json\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"application/json\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_content_type(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 46866800,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User gets \"success\" value of status",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"success\"",
+                  "offset": 10
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsValueOfStatus(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 31246200,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User gets employee id as 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 25
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsEmployeeIdAsId(java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15623200,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User gets employee name as \"Tiger Nixon\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Tiger Nixon\"",
+                  "offset": 27
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsEmployeeNameAs(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15626100,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "User gets employee salary as 320800",
+            "match": {
+              "arguments": [
+                {
+                  "val": "320800",
+                  "offset": 29
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsEmployeeSalaryAsSalary(java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 31248500,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "User gets employee age as 61",
+            "match": {
+              "arguments": [
+                {
+                  "val": "61",
+                  "offset": 26
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsEmployeeAgeAsAge(java.lang.Integer)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-02T18:54:11.894Z",
+        "line": 48,
+        "name": "Verify created employee data",
+        "description": "",
+        "id": "tacx-collection;verify-created-employee-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1546816500,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "User sends POST request to \"/create\" endpoint with",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/create\"",
+                  "offset": 27
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userSendsPOSTRequestToEndpointWith(java.lang.String,java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "newName"
+                ]
+              },
+              {
+                "cells": [
+                  "salary",
+                  "11000"
+                ]
+              },
+              {
+                "cells": [
+                  "age",
+                  "44"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "User gets Content-Type \"application/json\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"application/json\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_content_type(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15625200,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "User gets \"success\" value of status",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"success\"",
+                  "offset": 10
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsValueOfStatus(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 31248100,
+              "status": "passed"
+            },
+            "line": 41,
             "name": "User gets the given \"newName\"",
             "match": {
               "arguments": [
@@ -130,43 +453,46 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 62499900,
+              "status": "passed"
             },
-            "line": 10,
-            "name": "User gets the given 11000",
+            "line": 42,
+            "name": "User gets the given salary \"11000\"",
             "match": {
               "arguments": [
                 {
-                  "val": "11000",
-                  "offset": 20
+                  "val": "\"11000\"",
+                  "offset": 27
                 }
               ],
-              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheGivenSalary(java.lang.Integer)"
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheGivenSalarySalary(java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 31247500,
+              "status": "passed"
             },
-            "line": 11,
-            "name": "User gets the given 44",
+            "line": 43,
+            "name": "User gets the given age \"44\"",
             "match": {
               "arguments": [
                 {
-                  "val": "44",
-                  "offset": 20
+                  "val": "\"44\"",
+                  "offset": 24
                 }
               ],
-              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheGivenSalary(java.lang.Integer)"
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheGivenAgeAge(java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 46872000,
+              "status": "passed"
             },
-            "line": 12,
+            "line": 44,
             "name": "User gets \"added\" value of message",
             "match": {
               "arguments": [
@@ -181,9 +507,10 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 31248200,
+              "status": "passed"
             },
-            "line": 13,
+            "line": 45,
             "name": "User saves the new employee id",
             "match": {
               "location": "com.tacx.stepDefs.GETAllEmployeeData.userSavesTheNewEmployeeId()"
@@ -193,16 +520,341 @@
         ],
         "tags": [
           {
-            "name": "@wip"
+            "name": "@smoke"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-02T18:54:13.722Z",
+        "line": 66,
+        "name": "Verify updated employee data",
+        "description": "",
+        "id": "tacx-collection;verify-updated-employee-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "User gets the ID from previously created employee",
+            "match": {
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheIDFromPreviouslyCreatedEmployee()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 906215200,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "User sends PUT request  to \"/update/\" endpoint with",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/update/\"",
+                  "offset": 27
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userSendsPUTRequestToEndpointWith(java.lang.String,java.util.Map\u003cjava.lang.String, java.lang.Object\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name",
+                  "updateName"
+                ]
+              },
+              {
+                "cells": [
+                  "salary",
+                  "22222"
+                ]
+              },
+              {
+                "cells": [
+                  "age",
+                  "55"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "User gets Content-Type \"application/json\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"application/json\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_content_type(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15629700,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "User gets \"success\" value of status",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"success\"",
+                  "offset": 10
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsValueOfStatus(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15623300,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "User gets the given \"updateName\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"updateName\"",
+                  "offset": 20
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheGiven(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 46872300,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "User gets the given salary \"22222\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"22222\"",
+                  "offset": 27
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheGivenSalarySalary(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15623100,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "User gets the given age \"55\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"55\"",
+                  "offset": 24
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheGivenAgeAge(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15624900,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "User gets \"Successfully! Record has been updated.\" value of message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Successfully! Record has been updated.\"",
+                  "offset": 10
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsValueOfMessage(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-02T18:54:14.769Z",
+        "line": 68,
+        "name": "Verify the deleted employees data",
+        "description": "",
+        "id": "tacx-collection;verify-the-deleted-employees-data",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 69,
+            "name": "User gets the ID from previously created employee",
+            "match": {
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsTheIDFromPreviouslyCreatedEmployee()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 859343100,
+              "status": "passed"
+            },
+            "line": 70,
+            "name": "User sends DELETE request to \"/delete/\" endpoint with the id",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/delete/\"",
+                  "offset": 29
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userSendsDELETERequestToEndpointWithTheId(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 71,
+            "name": "User gets status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 22
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_status_code(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 72,
+            "name": "User gets Content-Type \"application/json\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"application/json\"",
+                  "offset": 23
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_content_type(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 73,
+            "name": "User gets \"OK\" next to status code",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"OK\"",
+                  "offset": 10
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.user_gets_next_to_status_code(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15625900,
+              "status": "passed"
+            },
+            "line": 74,
+            "name": "User gets \"success\" value of status",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"success\"",
+                  "offset": 10
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsValueOfStatus(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15622900,
+              "status": "passed"
+            },
+            "line": 75,
+            "name": "User gets data number as given id",
+            "match": {
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsDataNumberAsGivenId()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15629100,
+              "status": "passed"
+            },
+            "line": 76,
+            "name": "User gets \"Successfully! Record has been deleted\" value of message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Successfully! Record has been deleted\"",
+                  "offset": 10
+                }
+              ],
+              "location": "com.tacx.stepDefs.GETAllEmployeeData.userGetsValueOfMessage(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
           }
         ]
       }
     ],
-    "name": "POST Create a new employee",
+    "name": "Tacx Collection",
     "description": "",
-    "id": "post-create-a-new-employee",
+    "id": "tacx-collection",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/POST_CreateANewEmployee.feature",
-    "tags": []
+    "uri": "file:src/test/resources/AllScenarios.feature",
+    "tags": [
+      {
+        "name": "@smoke",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
   }
 ]

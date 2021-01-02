@@ -7,8 +7,14 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 
+import java.util.Map;
+
 public class GETAllEmployeeData {
 
+    static String id;
+    static String name;
+    static String salary;
+    static String age;
     String baseUrl = ConfigurationReader.get("BaseUrl");
     Response response;
 
@@ -90,6 +96,14 @@ public class GETAllEmployeeData {
         Assert.assertEquals("Verify employee age",expectedAge,actualAge);
     }
 
+    @When("User sends POST request to {string} endpoint with")
+    public void userSendsPOSTRequestToEndpointWith(String path, Map<String,Object> employee) {
+        response = RestAssured.given().contentType(ContentType.JSON)
+                .and().body(employee)
+                .when().post(baseUrl + path);
+        response.prettyPrint();
+
+    }
     @When("User sends POST request to {string} endpoint with {string} {int} {int}")
     public void userSendsPOSTRequestToEndpointWithSalaryAge(String path, String givenName, Integer givenSalary, Integer givenAge) {
         String requestBody = "{\n" +
@@ -97,9 +111,13 @@ public class GETAllEmployeeData {
                 "    \"salary\":\"" + givenSalary + "\",\n" +
                 "    \"age\":\"" + givenAge + "\"\n" +
                 "}";
-        response = RestAssured.given().accept(ContentType.JSON)
-                .when().body(requestBody)
-                .post(ConfigurationReader.get("BaseUrl") + path);
+
+        response = RestAssured.given().contentType(ContentType.JSON)
+                .and().body(requestBody)
+                .when().post(ConfigurationReader.get("BaseUrl") + path);
+
+        System.out.println("response.path(\"data.name\") = " + response.path("data.name"));
+        System.out.println("response.path(\"data.salary\") = " + response.path("data.salary"));
 
     }
 
@@ -109,15 +127,51 @@ public class GETAllEmployeeData {
         Assert.assertEquals("Verify name is the given name",givenName,actualName);
     }
 
-    @And("User gets the given {int}")
-    public void userGetsTheGivenSalary(Integer salary) {
+    @And("User gets the given salary {string}")
+    public void userGetsTheGivenSalarySalary(String givenSalary) {
+        String actualSalary = response.path("data.salary");
+        Assert.assertEquals("Verify salary is the given salary",givenSalary,actualSalary);
+    }
+
+    @And("User gets the given age {string}")
+    public void userGetsTheGivenAgeAge(String givenAge) {
+        String actualAge = response.path("data.age");
+        Assert.assertEquals("Verify age is the given age",givenAge,actualAge);
     }
 
     @And("User gets {string} value of message")
-    public void userGetsValueOfMessage(String arg0) {
+    public void userGetsValueOfMessage(String word) {
+        Assert.assertTrue("Verify the message contains the given word",response.path("message").toString().contains(word));
     }
 
     @And("User saves the new employee id")
     public void userSavesTheNewEmployeeId() {
+        id = Integer.toString(response.path("data.id"));
+    }
+
+
+    @Given("User gets the ID from previously created employee")
+    public void userGetsTheIDFromPreviouslyCreatedEmployee() {
+
+    }
+
+    @When("User sends PUT request  to {string} endpoint with")
+    public void userSendsPUTRequestToEndpointWith(String path,Map<String,Object> employee) {
+        response = RestAssured.given().contentType(ContentType.JSON)
+                .and().body(employee)
+                .when().put(baseUrl + path + id);
+        response.prettyPrint();
+    }
+
+    @When("User sends DELETE request to {string} endpoint with the id")
+    public void userSendsDELETERequestToEndpointWithTheId(String path) {
+        response = RestAssured.given().contentType(ContentType.JSON)
+                .when().delete(baseUrl + path + id);
+        response.prettyPrint();
+    }
+
+    @And("User gets data number as given id")
+    public void userGetsDataNumberAsGivenId() {
+        Assert.assertEquals("Verify deleted id is previously created id",id,response.path("data"));
     }
 }
